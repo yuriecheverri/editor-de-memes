@@ -19,11 +19,12 @@
 </head>
 
 <body>
+    <!-- Header con título y lista de navegación -->
     <header class="header">
         <h1>Generador de memes</h1>
         <nav class="header-nav">
             <ul class="header-nav-list">
-                <li onclick="clickNavImg()" class="header-nav-list-item">
+                <li onclick="clicKNavImg()" class="header-nav-list-item">
                     <i class="fa-regular fa-file-image"></i>
                     Imagen
                 </li>
@@ -31,13 +32,16 @@
                     <i class="fa-solid fa-font"></i>
                     Texto
                 </li>
-                <li onclick="clickNavChangeTheme()" class="header-nav-list-item">
+                <li onclick="clickNavChangeMode()" class="header-nav-list-item">
                     <i class="fa-regular fa-lightbulb"></i>
                     Modo oscuro
                 </li>
             </ul>
         </nav>
     </header>
+    <!-- Fin del Header -->
+
+    <!-- Inicia contenedor principal con meme -->
     <main class="main-container">
         <section class="section-meme">
             <div class="top-text">
@@ -49,19 +53,23 @@
             </div>
         </section>
     </main>
-    <aside id="asideImg" class="aside">
+    <!-- Fin del contenedor del meme -->
+
+    <!-- Inicia el panel lateral de Imagen con todas sus propiedades de modificación -->
+    <aside id="imageAside" class="aside">
         <h3 class="title-img">
             Imagen
         </h3>
         <div class="url-img">
             <label for="url">URL</label>
-            <input class="input-url" type="text" name="url" id="url" oninput="loadImage()">
+            <input class="input-url" type="text" name="input-url" id="input-url" oninput="loadImage()">
         </div>
         <label for="fondo">FONDO</label>
         <div class="wallpaper-img">
             <div class="input-color">
-                <input aria-label="Color de fondo de imagen" type="color" name="color" id="color" value="#FFFFFF">
-                <span>#FFFFFF</span>
+                <input aria-label="Color de fondo de imagen" type="color" name="color" id="color-picker"
+                    value="#FFFFFF">
+                <span id="color-name"></span>
             </div>
             <div class="input-option">
                 <select name="image-option" id="image-option">
@@ -114,26 +122,31 @@
         </div>
         <button class="button-img" type="button" id="button-img">Restabler Filtros</button>
     </aside>
-    <aside  id="asideText" class="aside">
+    <!-- Fin del aside de Imagen -->
+
+    <!-- Inicia el panel lateral de texto con todas sus propiedades -->
+    <!-- <aside id="textAside" class="aside">
         <h3 class="title-img">
             Texto
         </h3>
         <div class="url-img">
             <label for="aside-top-text">SUPERIOR</label>
-            <textarea  class="input-option" name="aside-top-text" id="aside-top-text" cols="30" rows="2">Top text</textarea>
-            <div> 
+            <textarea class="input-option" name="aside-top-text" id="aside-top-text" cols="30"
+                rows="2">Top text</textarea>
+            <div>
                 <input type="checkbox" name="checkbox-top-text" id="checkbox-top-text">
                 <span>Sin texto Superior</span>
             </div>
             <br>
             <label for="aside-top-text">INFERIOR</label>
-            <textarea  class="input-option" name="aside-botton-text" id="aside-botton-text" cols="30" rows="2">Bottom text</textarea>
-            <div> 
+            <textarea class="input-option" name="aside-botton-text" id="aside-botton-text" cols="30"
+                rows="2">Bottom text</textarea>
+            <div>
                 <input type="checkbox" name="checkbox-botton-text" id="checkbox-botton-text">
                 <span>Sin texto inferior</span>
             </div>
         </div>
-        <select  class="input-option" name="fuente-option" id="fuente-option">
+        <select class="input-option" name="fuente-option" id="fuente-option">
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
             <option value="American Typewriter">American Typewriter</option>
@@ -145,7 +158,8 @@
             <option value="Times New Roman">Times New Roman</option>
         </select>
         <div class="container_text-align">
-            <input class="input-option button_style-defauld" type="number" name="letter-fontsize" id="letter-fontsize" min="16" max="60" value="40">
+            <input class="input-option button_style-defauld" type="number" name="letter-fontsize" id="letter-fontsize"
+                min="16" max="60" value="40">
             <div class="container_flex">
                 <button class="button-text-align button_style-defauld">
                     <i class="fa-solid fa-align-left"></i>
@@ -172,9 +186,9 @@
                     <input aria-label="Color de fondo de imagen" type="color" name="color" id="color" value="#FFFFFF">
                     <span>#FFFFFF</span>
                 </div>
-            </div> 
+            </div>
         </div>
-        <div> 
+        <div>
             <input type="checkbox" name="checkbox-botton-text" id="checkbox-botton-text">
             <span>Fondo transparente</span>
         </div>
@@ -188,14 +202,16 @@
         </div>
         <div>
             <label for="ESPACIADO">ESPACIADO</label>
-            <input class="input-option button_style-defauld" type="number" name="letter-spacing" id="letter-spacing" min="1" max="10" value="1">
+            <input class="input-option button_style-defauld" type="number" name="letter-spacing" id="letter-spacing"
+                min="1" max="10" value="1">
         </div>
         <div>
             <label for="INTERLINEADO">INTERLINEADO</label>
-            <input class="input-option button_style-defauld" type="number" name="letter-lineHeight" id="letter-lineHeight" min="1" max="10" value="2">
+            <input class="input-option button_style-defauld" type="number" name="letter-lineHeight"
+                id="letter-lineHeight" min="1" max="10" value="2">
         </div>
-    </aside>
-
+    </aside> -->
+    <!-- Fin del aside de texto -->
     <script src="./script.js"></script>
 </body>
 
