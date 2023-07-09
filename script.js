@@ -91,10 +91,17 @@ inputInvert.addEventListener('input', () => changeValueFilters());
 
 const changeValueFilters = () => {
     memeImg.style.filter = `brightness(${inputBrightness.value}) opacity(${inputOpacity.value}) blur(${inputBlur.value}) contrast(${inputContrast.value}%) grayscale(${inputGrayscale.value}%) hue-rotate(${inputHueRotation.value}) sepia(${inputSepia.value}%) saturate(${inputSaturation.value}%) invert(${inputInvert.value})`
-
 }
 
-inputBrightness.value = 0;
+const buttonResetFilters = document.getElementById('button-img')
+
+buttonResetFilters.addEventListener('click', () => resetFilters())
+
+const resetFilters = () => {
+    console.log('hola')
+}
+
+//inputBrightness.value = 0;
 
 
 //Abrir y cerrar panel
