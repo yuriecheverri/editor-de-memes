@@ -105,6 +105,7 @@ body {
 
 .input-url:hover {
     outline: none;
+    background-color: #6B728E;
 }
 
 .wallpaper-img {
@@ -184,6 +185,11 @@ input[type='range']::-webkit-slider-thumb {
     border-radius: 5px;
     border: none;
     color: white;
+    cursor: pointer;
+}
+
+.button-img:hover {
+    border-color: #6B728E;
 }
 
 .container_text-align{
@@ -250,6 +256,12 @@ input[type='range']::-webkit-slider-thumb {
     width: 100%;
     }
 
+/* Clase para ocultar elementos  */
+
+.hidden {
+    display: none;
+}
+
 /* Clases para el modo claro */
 
 .header-light {
@@ -267,4 +279,23 @@ input[type='range']::-webkit-slider-thumb {
     color: black;
     }
 
+/* .input-url {
+    background-color: pink;
+    color: black;
+}
+
+.input-color {
+    background-color: pink;
+    color: black;
+}
+
+.input-option {
+    background-color: pink;
+    color: black;
+}
+
+.input-url:hover {
+    background-color: pink;
+    color: black;
+} */
 

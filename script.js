@@ -34,6 +34,8 @@ navModeButton.addEventListener('click', () => {
     }
 })
 
+// PANEL DE IMAGEN
+
 //Agregar imagen con url
 
 const inputUrl = document.getElementById('input-url')
@@ -67,7 +69,7 @@ selectChangeImg.addEventListener('input', (e) => {
     memeImg.style.backgroundBlendMode = e.target.value;
 })
 
-// Filtros
+// Filtros para el meme 
 
 const inputBrightness = document.getElementById('brightness');
 const inputOpacity = document.getElementById('opacity');
@@ -93,27 +95,89 @@ const changeValueFilters = () => {
     memeImg.style.filter = `brightness(${inputBrightness.value}) opacity(${inputOpacity.value}) blur(${inputBlur.value}) contrast(${inputContrast.value}%) grayscale(${inputGrayscale.value}%) hue-rotate(${inputHueRotation.value}) sepia(${inputSepia.value}%) saturate(${inputSaturation.value}%) invert(${inputInvert.value})`
 }
 
+// Reestablecer Filtros 
+
 const buttonResetFilters = document.getElementById('button-img')
 
 buttonResetFilters.addEventListener('click', () => resetFilters())
 
 const resetFilters = () => {
-    console.log('hola')
+    memeImg.style.filter = `brightness(${inputBrightness.value=1}) opacity(${inputOpacity.value=1}) blur(${inputBlur.value=1000}) contrast(${inputContrast.value=0}%) grayscale(${inputGrayscale.value=0}%) hue-rotate(${inputHueRotation.value=0}) sepia(${inputSepia.value=0}%) saturate(${inputSaturation.value=100}%) invert(${inputInvert.value=0})`
+    console.log(memeImg.style.filter)
 }
 
-//inputBrightness.value = 0;
-
-
 //Abrir y cerrar panel
-//Descargar imagen
-//Restablecer filtros
 
-//Texto
-//Editar texto superior
-//Remover texto superior
-//Editar texto inferior
-//Remover texto inferior
+
+//Descargar imagen
+
+const downloadButton = document.getElementById ('nav-download-button')
+const meme = document.getElementById ('main-container')
+
+downloadButton.addEventListener("click", () => downloadMeme());
+
+const downloadMeme = () => {
+    domtoimage.toBlob(meme).then(function (blob) {
+    window.saveAs(blob, "mi-meme.png");
+    });
+};
+
+//PANEL DE TEXTO 
+
+//Editar texto superior e inferior 
+
+const topText = document.getElementById ('top-text');
+const bottomText = document.getElementById ('bottom-text');
+
+const asideTopText = document.getElementById (aside-top-text);
+const asidebottomtext = document.getElementsByClassName (aside-bottom-text);
+
+topText.addEventListener("chnage", () =>{
+    asidebottomtext.innerHTML = topText.value;
+})
+
+bottomText.addEventListener("change", () =>{
+    asidebottomtext.innerHTML = bottomText.value;
+})
+
+//Remover texto superior e inferior 
+
+const topTextInput = document.getElementById (checkbox-top-text)
+const bottomTextInput = document.getElementById (checkbox-bottom-text)
+
+topTextInput.addEventListener("change", () => hideTopText());
+
+const hideTopText = () => {
+    console.log(topTextInput)
+    if (checkbox-top-text.checked) {
+        topText.classList.add("hidden")
+    } else {
+        topText.classList.remove("hidden")
+    }
+};
+
+bottomTextInput.addEventListener("change", () => hidebottomText());
+
+const hideBottomText = () => {
+    if (checkbox-bottom-text.checked) {
+    bottomText.classList.add("hidden");
+    } else {
+    bottomText.classList.remove("hidden");
+    }
+};
+
+
 //Cambiar familia de fuente
+
+const fontSelector = document.getElementById ('font-selector')
+    
+fontSelector.addEventListener("change", () => changeFontFamily());
+
+const changeFontFamily = () => {
+    topText.style.FontFamily = `(${fontSelector.value})`
+    bottomText.style.fontFamily = `(${fontSelector.value})`;
+}
+
 //Cambiar tamaño de fuente
 //Cambiar alineación
 //Cambiar color de texto

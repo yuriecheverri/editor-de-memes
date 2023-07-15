@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de memes</title>
     <link rel=stylesheet href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/e1368c2029.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +42,10 @@
                     <i class="fa-regular fa-lightbulb"></i>
                     Modo oscuro
                 </li>
+                <li id="nav-download-button" class="header-nav-list-item">
+                    <i class="fa-solid fa-download"></i>
+                    Download
+                </li>
             </ul>
         </nav>
     </header>
@@ -43,15 +53,15 @@
 
     <!-- Inicia contenedor principal con meme -->
     <main id="main-container" class="main-container">
-        <section class="section-meme">
-            <div class="top-text">
+        <div class="section-meme">
+            <div id="top-text" class="top-text hidden">
                 TEXTO SUPERIOR
             </div>
             <div id="imageDiv" class="image-meme"></div>
-            <div class="bottom-text">
+            <div id="bottom-text" class="bottom-text hidden">
                 TEXTO INFERIOR
             </div>
-        </section>
+        </div>
     </main>
     <!-- Fin del contenedor del meme -->
 
@@ -140,14 +150,14 @@
             </div>
             <br>
             <label for="aside-top-text">INFERIOR</label>
-            <textarea class="input-option" name="aside-botton-text" id="aside-botton-text" cols="30"
+            <textarea class="input-option" name="aside-bottom-text" id="aside-bottom-text" cols="30"
                 rows="2">Bottom text</textarea>
             <div>
-                <input type="checkbox" name="checkbox-botton-text" id="checkbox-botton-text">
+                <input type="checkbox" name="checkbox-bottom-text" id="checkbox-bottom-text">
                 <span>Sin texto inferior</span>
             </div>
         </div>
-        <select class="input-option" name="fuente-option" id="fuente-option">
+        <select class="input-option" name="font-selector" id="font-selector">
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
             <option value="American Typewriter">American Typewriter</option>
@@ -190,7 +200,7 @@
             </div>
         </div>
         <div>
-            <input type="checkbox" name="checkbox-botton-text" id="checkbox-botton-text">
+            <input type="checkbox" name="checkbox-bottom-text" id="checkbox-bottom-text">
             <span>Fondo transparente</span>
         </div>
         <div class="container-contourning">
