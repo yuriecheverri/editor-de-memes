@@ -54,11 +54,11 @@
     <!-- Inicia contenedor principal con meme -->
     <main id="main-container" class="main-container">
         <div class="section-meme">
-            <div id="top-text" class="top-text hidden">
+            <div id="top-text" class="top-text">
                 TEXTO SUPERIOR
             </div>
             <div id="imageDiv" class="image-meme"></div>
-            <div id="bottom-text" class="bottom-text hidden">
+            <div id="bottom-text" class="bottom-text">
                 TEXTO INFERIOR
             </div>
         </div>
@@ -143,7 +143,7 @@
         <div class="url-img">
             <label for="aside-top-text">SUPERIOR</label>
             <textarea class="input-option" name="aside-top-text" id="aside-top-text" cols="30"
-                rows="2">Top text</textarea>
+                rows="2">TEXTO SUPERIOR</textarea>
             <div>
                 <input type="checkbox" name="checkbox-top-text" id="checkbox-top-text">
                 <span>Sin texto Superior</span>
@@ -151,7 +151,7 @@
             <br>
             <label for="aside-top-text">INFERIOR</label>
             <textarea class="input-option" name="aside-bottom-text" id="aside-bottom-text" cols="30"
-                rows="2">Bottom text</textarea>
+                rows="2">TEXTO INFERIOR</textarea>
             <div>
                 <input type="checkbox" name="checkbox-bottom-text" id="checkbox-bottom-text">
                 <span>Sin texto inferior</span>
@@ -172,13 +172,13 @@
             <input class="input-option button_style-defauld" type="number" name="letter-fontsize" id="letter-fontsize"
                 min="16" max="60" value="40">
             <div class="container_flex">
-                <button class="button-text-align button_style-defauld">
+                <button id="button-text-right" class="button-text-align button_style-defauld">
                     <i class="fa-solid fa-align-left"></i>
                 </button>
-                <button class="button-text-align button_style-defauld">
+                <button id="button-text-center" class="button-text-align button_style-defauld">
                     <i class="fa-solid fa-align-center"></i>
                 </button>
-                <button class="button-text-align button_style-defauld">
+                <button id="button-text-left" class="button-text-align button_style-defauld">
                     <i class="fa-solid fa-align-right"></i>
                 </button>
             </div>
@@ -187,15 +187,15 @@
             <div class="text_input-color">
                 <label for="Color">Color</label>
                 <div>
-                    <input aria-label="Color de fondo de imagen" type="color" name="color" id="color" value="#FFFFFF">
-                    <span>#FFFFFF</span>
+                    <input aria-label="Color de fondo de imagen" type="color" name="color" id="color-text" value="#FFFFFF">
+                    <span id="span-color-text">#FFFFFF</span>
                 </div>
             </div>
             <div class="text_input-color">
                 <label for="fondo">Fondo</label>
                 <div>
-                    <input aria-label="Color de fondo de imagen" type="color" name="color" id="color" value="#FFFFFF">
-                    <span>#FFFFFF</span>
+                    <input aria-label="Color de fondo de imagen" type="color" name="color" id="color-background" value="#FFFFFF">
+                    <span id="span-color-background">#FFFFFF</span>
                 </div>
             </div>
         </div>

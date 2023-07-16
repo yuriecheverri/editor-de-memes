@@ -129,37 +129,36 @@ const downloadMeme = () => {
 const topText = document.getElementById ('top-text');
 const bottomText = document.getElementById ('bottom-text');
 
-const asideTopText = document.getElementById (aside-top-text);
-const asidebottomtext = document.getElementsByClassName (aside-bottom-text);
+const asideTopText = document.getElementById('aside-top-text');
+const asideBottomText = document.getElementById('aside-bottom-text');
 
-topText.addEventListener("chnage", () =>{
-    asidebottomtext.innerHTML = topText.value;
+asideTopText.addEventListener("input", () =>{
+    topText.innerHTML = asideTopText.value;
 })
 
-bottomText.addEventListener("change", () =>{
-    asidebottomtext.innerHTML = bottomText.value;
+asideBottomText.addEventListener("input", () =>{
+    bottomText.innerHTML = asideBottomText.value;
 })
 
 //Remover texto superior e inferior 
 
-const topTextInput = document.getElementById (checkbox-top-text)
-const bottomTextInput = document.getElementById (checkbox-bottom-text)
+const topTextInput = document.getElementById('checkbox-top-text')
+const bottomTextInput = document.getElementById('checkbox-bottom-text')
 
 topTextInput.addEventListener("change", () => hideTopText());
 
 const hideTopText = () => {
-    console.log(topTextInput)
-    if (checkbox-top-text.checked) {
+    if (topTextInput.checked) {
         topText.classList.add("hidden")
     } else {
         topText.classList.remove("hidden")
     }
 };
 
-bottomTextInput.addEventListener("change", () => hidebottomText());
+bottomTextInput.addEventListener("change", () => hideBottomText());
 
 const hideBottomText = () => {
-    if (checkbox-bottom-text.checked) {
+    if (bottomTextInput.checked) {
     bottomText.classList.add("hidden");
     } else {
     bottomText.classList.remove("hidden");
@@ -169,18 +168,68 @@ const hideBottomText = () => {
 
 //Cambiar familia de fuente
 
-const fontSelector = document.getElementById ('font-selector')
+const fontSelector = document.getElementById('font-selector')
     
 fontSelector.addEventListener("change", () => changeFontFamily());
 
 const changeFontFamily = () => {
-    topText.style.FontFamily = `(${fontSelector.value})`
-    bottomText.style.fontFamily = `(${fontSelector.value})`;
+    topText.style.fontFamily = fontSelector.value;
+    bottomText.style.fontFamily = fontSelector.value;
 }
 
 //Cambiar tamaño de fuente
+
+const letterFontsize = document.getElementById ('letter-fontsize')
+
+letterFontsize.addEventListener("input", () => changeLetterFontsize());
+
+const changeLetterFontsize = () => {
+    topText.style.fontSize = `${letterFontsize.value}px`;
+    bottomText.style.fontSize = `${letterFontsize.value}px`;
+}
+
 //Cambiar alineación
+
+const buttonTextRight = document.getElementById('button-text-right')
+const buttonTextCenter = document.getElementById('button-text-center')
+const buttonTextLeft = document.getElementById('button-text-left')
+
+buttonTextRight.addEventListener("click", () =>{
+    console.log(buttonTextRight);
+    topText.style.justifyContent = 'right';
+})
+
+buttonTextCenter.addEventListener("click", () =>{
+    topText.style.justifyContent = 'center';
+})
+
+buttonTextLeft.addEventListener("click", () =>{
+    topText.style.justifyContent = 'left';
+})
+
 //Cambiar color de texto
+
+const colorText = document.getElementById('color-text');
+const colorBackground = document.getElementById('color-background');
+const spanColorText = document.getElementById ('span-color-text')
+const spanColorBackground = document.getElementById ('span-color-background')
+
+colorText.addEventListener('input', () => changeColorText());
+
+const changeColorText = () => {
+    topText.style.color = colorText.value;
+    bottomText.style.color = colorText.value;
+    spanColorText.innerHTML = colorText.value;
+}
+
+colorBackground.addEventListener('input', () => changecolorBackground());
+
+const changecolorBackground = () => {
+    topText.style.backgroundColor = colorBackground.value;
+    bottomText.style.backgroundColor = colorBackground.value;
+    spanColorBackground.innerHTML = colorBackground.value;
+}
+
 //Cambiar color de fondo de texto
 //Fondo transparente
 //Cambiar padding de texto

@@ -258,6 +258,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* Clase para ocultar elementos  */
 
+
 .hidden {
     display: none;
 }
