@@ -67,6 +67,7 @@
 
     <!-- Inicia el panel lateral de Imagen con todas sus propiedades de modificación -->
     <aside id="imageAside" class="aside">
+        <span id="close-aside-image" class="close-aside">X</span>
         <h3 class="title-img">
             Imagen
         </h3>
@@ -137,6 +138,7 @@
 
     <!-- Inicia el panel lateral de texto con todas sus propiedades -->
     <aside id="textAside" class="aside">
+        <span id="close-aside-text" class="close-aside">X</span>
         <h3 class="title-img">
             Texto
         </h3>
@@ -200,7 +202,7 @@
             </div>
         </div>
         <div>
-            <input type="checkbox" name="checkbox-bottom-text" id="checkbox-bottom-text">
+            <input type="checkbox" name="checkbox-transparent-backgroud" id="checkbox-transparent-backgroud">
             <span>Fondo transparente</span>
         </div>
         <div class="container-contourning">
@@ -214,12 +216,18 @@
         <div>
             <label for="ESPACIADO">ESPACIADO</label>
             <input class="input-option button_style-defauld" type="number" name="letter-spacing" id="letter-spacing"
-                min="1" max="10" value="1">
+                min="1" max="50" value="20">
         </div>
         <div>
             <label for="INTERLINEADO">INTERLINEADO</label>
-            <input class="input-option button_style-defauld" type="number" name="letter-lineHeight"
-                id="letter-lineHeight" min="1" max="10" value="2">
+                <select id="letter-line-height" class="input-option button_style-defauld">
+                    <option value="0.8">0.8</option>
+                    <option value="1" selected="">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
         </div>
     </aside>
     <!-- Fin del aside de texto -->

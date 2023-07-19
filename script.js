@@ -102,8 +102,7 @@ const buttonResetFilters = document.getElementById('button-img')
 buttonResetFilters.addEventListener('click', () => resetFilters())
 
 const resetFilters = () => {
-    memeImg.style.filter = `brightness(${inputBrightness.value=1}) opacity(${inputOpacity.value=1}) blur(${inputBlur.value=1000}) contrast(${inputContrast.value=0}%) grayscale(${inputGrayscale.value=0}%) hue-rotate(${inputHueRotation.value=0}) sepia(${inputSepia.value=0}%) saturate(${inputSaturation.value=100}%) invert(${inputInvert.value=0})`
-    console.log(memeImg.style.filter)
+    memeImg.style.filter = `brightness(${inputBrightness.value=1}) opacity(${inputOpacity.value=1}) blur(${inputBlur.value=0}) contrast(${inputContrast.value=100}%) grayscale(${inputGrayscale.value=0}%) hue-rotate(${inputHueRotation.value=0}deg) sepia(${inputSepia.value=0}%) saturate(${inputSaturation.value=100}%) invert(${inputInvert.value=0})`
 }
 
 //Abrir y cerrar panel
@@ -222,6 +221,8 @@ const changeColorText = () => {
     spanColorText.innerHTML = colorText.value;
 }
 
+//Cambiar color de fondo de texto
+
 colorBackground.addEventListener('input', () => changecolorBackground());
 
 const changecolorBackground = () => {
@@ -230,7 +231,55 @@ const changecolorBackground = () => {
     spanColorBackground.innerHTML = colorBackground.value;
 }
 
-//Cambiar color de fondo de texto
 //Fondo transparente
+
+const checkboxTransparentBackground = document.getElementById('checkbox-transparent-backgroud');
+
+checkboxTransparentBackground.addEventListener('input', () => checkedTransparentBackgroud())
+
+const checkedTransparentBackgroud = () => {
+    if (checkboxTransparentBackground.checked) {
+        topText.style.backgroundColor = 'transparent';
+        topText.style.position = 'absolute';
+        bottomText.style.backgroundColor = 'transparent';    
+        bottomText.style.position = 'absolute';    
+        bottomText.style.bottom = '0';  
+    } else {
+        topText.style.backgroundColor = 'white';
+        topText.style.position = 'initial';
+        bottomText.style.backgroundColor = 'White';    
+        bottomText.style.position = 'initial';    
+    }
+}
+
 //Cambiar padding de texto
+
+const changeLetterSpacing = document.getElementById('letter-spacing')
+
+changeLetterSpacing.addEventListener('input', () =>{
+    topText.style.padding = `${changeLetterSpacing.value}px`;
+    bottomText.style.padding = `${changeLetterSpacing.value}px`;
+}) 
+
 //Cambiar alto de línea de texto
+
+const letterLineHeight = document.getElementById('letter-line-height')
+
+letterLineHeight.addEventListener('input',() => changeLetterLineHeight())
+
+const changeLetterLineHeight = () => {
+    topText.style.lineHeight = letterLineHeight.value;
+    bottomText.style.lineHeight = letterLineHeight.value;
+}
+
+const closeAsideText = document.getElementById('close-aside-text')
+const closeAsideImage = document.getElementById('close-aside-image')
+
+
+closeAsideImage.addEventListener('click', () => {
+    asideImg.style.display = 'none';
+})
+
+closeAsideText.addEventListener('click', () => {
+    asideText.style.display = 'none';
+})
